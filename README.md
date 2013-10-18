@@ -11,4 +11,4 @@ Starting with a simple example that expresses some basic behaviour, for example 
 I then improved the code, added another expected behavior and repeated the cycle. In TDD circles, this is known as Red-Green-Refactor. Primer sequences are typically 18-24 nucleotides, but for genes that are several thousand nucleotides in length, a script that automates the task of calculating DNA statistics can be quite powerful.
 
 
-Future implementations of this code will include methods for determining melting temperature, Tm and detecting hairpin loops.
+Future implementations of this code will include methods for determining DNA melting temperature, Tm, and detecting hairpin loops.
