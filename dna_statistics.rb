@@ -4,7 +4,6 @@
 require 'pry'
 
 class Dna
-
   attr_reader :sequence
 
   def initialize(sequence)
@@ -25,9 +24,11 @@ class Dna
     hash.sort
   end
 
+
   def total_char
     sequence.length
   end
+
 
   def analyze
     statistics = []
@@ -37,6 +38,7 @@ class Dna
 
     return statistics
   end
+
 
   def display
     output = ''
@@ -50,7 +52,8 @@ class Dna
   end
 end
 
-
+# Expected Output:
+# DNA statistics (52 residue sequence) A: 13.5% C: 34.6% G: 21.2% T: 30.8%
 puts Dna.new('aaggccctttacgtgcccttgccctttacgttacgtaccgggccctttacgt').display
 
 
