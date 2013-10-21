@@ -1,5 +1,6 @@
 # A program to display the statistics related to a given DNA sequence
 # Author: Elizabeth Tenorio
+
 require 'rspec'
 
 require_relative 'dna_statistics'
