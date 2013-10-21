@@ -11,8 +11,7 @@ def factorial(n)
   if n == 0
     1
   else
-    recurse = factorial(n-1)
-    result = n * recurse
+    result = n * factorial(n-1)
   end
 end
 
@@ -20,23 +19,22 @@ def estimate_pi
   total = 0
   k = 0
   factor = 2 * Math.sqrt(2) / 9801
-  keep_going = true
+  term = 1
 
-  while keep_going == true
+  while term > 1E-15
     numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
     denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
     term = factor.to_f * (numerator.to_f/denominator.to_f)
     total += term
     k += 1
-    puts term < 1E-15
 
     if term < 1E-15
-      keep_going = false
       puts "Finished at iteration number #{k}"
       break
     end
 
   end
+  print "The estimated value of pi according to Ramanujan is "
   return 1 / total
 end
 
