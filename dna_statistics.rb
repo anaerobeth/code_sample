@@ -1,4 +1,5 @@
 # A program to display the statistics related to a given DNA sequence
+# An exercise in Test-Driven Development
 # Author: Elizabeth Tenorio
 
 require 'pry'

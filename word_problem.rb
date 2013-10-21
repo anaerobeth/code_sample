@@ -1,3 +1,7 @@
+# A program that interprets a simple word problem and calculates the answer
+# An exercise in Test-Driven Development
+# Author: Elizabeth Tenorio
+
 class WordProblemAnswerer
 
   attr_accessor :phrase, :first_number, :second_number, :operation
