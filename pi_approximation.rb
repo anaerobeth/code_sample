@@ -6,31 +6,43 @@
 # Below is an implementation in Ruby of a function called estimate_pi
 # that uses his formula to compute and return an estimate of pi
 # (an exercise from Chapter 7 of Think Python by Allen Downey).
+# Author: Elizabeth Tenorio
 
 def factorial(n)
-  if n == 0
-    1
-  else
-    result = n * factorial(n-1)
-  end
+  n == 0 ? 1 : n * factorial(n-1)
+end
+
+def  factor
+  2 * Math.sqrt(2) / 9801
+end
+
+def numerator(k)
+  (factorial(4 * k).to_f * (1103 + 26390 * k).to_f)
+end
+
+def denominator(k)
+  (factorial(k).to_f ** 4) * 396 ** (4 * k).to_f
 end
 
 def estimate_pi
   total = 0
   k = 0
-  factor = 2 * Math.sqrt(2) / 9801
   term = 1
 
   while term > 1E-15
-    numerator = (factorial(4 * k).to_f * (1103 + 26390 * k).to_f)
-    denominator = (factorial(k).to_f ** 4) * 396 ** (4 * k).to_f
-    term = factor.to_f * (numerator.to_f/denominator.to_f)
+    term = factor.to_f * (numerator(k).to_f/denominator(k).to_f)
     total += term
     k += 1
   end
-  puts "Finished at iteration number #{k}"
-  print "The estimated value of pi according to Ramanujan is "
-  return 1 / total
+  display_pi( k, 1 / total )
 end
 
-puts estimate_pi()
+def display_pi(k, answer)
+  puts "Finished at iteration number #{k}"
+  puts "The estimated value of pi according to Ramanujan is #{answer}"
+end
+
+puts estimate_pi
+# Expected output:
+# Finished at iteration number 3
+# The estimated value of pi according to Ramanujan is 3.141592653589793
