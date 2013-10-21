@@ -27,13 +27,8 @@ def estimate_pi
     term = factor.to_f * (numerator.to_f/denominator.to_f)
     total += term
     k += 1
-
-    if term < 1E-15
-      puts "Finished at iteration number #{k}"
-      break
-    end
-
   end
+  puts "Finished at iteration number #{k}"
   print "The estimated value of pi according to Ramanujan is "
   return 1 / total
 end
