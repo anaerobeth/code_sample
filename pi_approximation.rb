@@ -22,8 +22,8 @@ def estimate_pi
   term = 1
 
   while term > 1E-15
-    numerator = (factorial(4*k).to_f * (1103 + 26390 * k).to_f)
-    denominator = (factorial(k).to_f**4) * 396**(4*k).to_f
+    numerator = (factorial(4 * k).to_f * (1103 + 26390 * k).to_f)
+    denominator = (factorial(k).to_f ** 4) * 396 ** (4 * k).to_f
     term = factor.to_f * (numerator.to_f/denominator.to_f)
     total += term
     k += 1
